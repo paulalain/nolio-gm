@@ -9,17 +9,6 @@
 // @grant        GM_download
 // ==/UserScript==
 
-// ==UserScript==
-// @name         Nolio 3 Zones
-// @namespace    https://www.nolio.io/
-// @version      2024-09-13
-// @description  try to take over the world!
-// @author       You
-// @match        https://www.nolio.io/*/
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com
-// @grant        none
-// ==/UserScript==
-
 
 window.addEventListener('scroll', event => {
     let charts = Highcharts.charts;
