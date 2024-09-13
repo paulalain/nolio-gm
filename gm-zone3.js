@@ -5,10 +5,8 @@
 // @description  Update the 7 zones to 3 zones
 // @author       Paul-Alain Bugnard
 // @match        https://www.nolio.io/*/
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @grant        GM_download
 // ==/UserScript==
-
 
 window.addEventListener('scroll', event => {
     let charts = Highcharts.charts;
