@@ -2,6 +2,17 @@
 // @name         Nolio 3 Zones
 // @namespace    https://www.nolio.io/
 // @version      2024-09-13
+// @description  Update the 7 zones to 3 zones
+// @author       Paul-Alain Bugnard
+// @match        https://www.nolio.io/*/
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com
+// @grant        GM_download
+// ==/UserScript==
+
+// ==UserScript==
+// @name         Nolio 3 Zones
+// @namespace    https://www.nolio.io/
+// @version      2024-09-13
 // @description  try to take over the world!
 // @author       You
 // @match        https://www.nolio.io/*/
@@ -14,7 +25,6 @@ window.addEventListener('scroll', event => {
     let charts = Highcharts.charts;
 
     for (let i in charts) {
-        console.log(charts[i].options);
         if (charts[i].options && charts[i].options.title && charts[i].options.title.text && charts[i].options.title.text === "Durée par zones allure") {
             let zoneChart = charts[i];
             let options = zoneChart.options;
@@ -46,6 +56,15 @@ window.addEventListener('scroll', event => {
                 name: "Zone 3",
                 name_annotated: "Zone 3"
             }];
+
+            options.plotOptions.series = {
+                borderRadius: 5,
+                dataLabels: [{
+                    enabled: true,
+                    distance: 15,
+                    format: '{point.name}<br />{point.percentage:.0f}%',
+                }]
+            };
 
             options.series[0].data = newData;
             charts[i].options.title.text = "Durée par 3 zones allure";
